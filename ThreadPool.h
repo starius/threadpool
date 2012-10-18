@@ -124,6 +124,15 @@ class ThreadPool:
 
 public:
 
+    ThreadPool()
+    {
+    }
+
+    ThreadPool(int maxThreadCount)
+    {
+        setMaxThreadCount(maxThreadCount);
+    }
+
     template <typename SourceIterator, typename ArgumentType, typename ResultType>
     FutureIterator<ResultType> map(SourceIterator sourceIterator, ResultType (f)(ArgumentType))
     {
