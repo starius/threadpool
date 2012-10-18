@@ -133,6 +133,9 @@ public:
         setMaxThreadCount(maxThreadCount);
     }
 
+    /// \param sourceIterator Java-style iterator of ArgumentType values
+    /// \param f function ArgumentType -> ResultType
+    /// \returns Java-style iterator of ResultType values
     template <typename SourceIterator, typename ArgumentType, typename ResultType>
     FutureIterator<ResultType> map(SourceIterator sourceIterator, ResultType (f)(ArgumentType))
     {
